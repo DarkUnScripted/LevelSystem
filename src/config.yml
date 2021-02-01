@@ -2,3 +2,7 @@ settings:
   pass:
     free: true
     premium: true
+  levels:
+    static: false
+    increasing-amount: 1.5
+    boosters: true

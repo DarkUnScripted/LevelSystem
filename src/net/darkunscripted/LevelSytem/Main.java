@@ -38,9 +38,6 @@ public class Main extends JavaPlugin {
         cfgm.setupPlayers();
         cfgm.savePlayers();
         cfgm.reloadPlayers();
-        cfgm.setupArenas();
-        cfgm.saveArenas();
-        cfgm.reloadArenas();
     }
 
     public void loadConfig(){

@@ -17,8 +17,6 @@ public class FileManager {
 
     public FileConfiguration playerscfg;
     public File playersfile;
-    public FileConfiguration arenascfg;
-    public File arenasfile;
 
     //--------------------
 
@@ -57,43 +55,6 @@ public class FileManager {
     public void reloadPlayers(){
         playerscfg = YamlConfiguration.loadConfiguration(playersfile);
         Bukkit.getServer().getConsoleSender().sendMessage(Utils.chat("&aplayers.yml has been reloaded"));
-    }
-
-    public void setupArenas(){
-        if(!plugin.getDataFolder().exists()){
-            plugin.getDataFolder().mkdir();
-        }
-
-        arenasfile = new File(plugin.getDataFolder(), "arenas.yml");
-
-        if(!arenasfile.exists()){
-            try{
-                arenasfile.createNewFile();
-            }catch (IOException e){
-                Bukkit.getServer().getConsoleSender().sendMessage(Utils.chat("&cCould not create arenas.yml file!"));
-            }
-        }
-
-        arenascfg = YamlConfiguration.loadConfiguration(arenasfile);
-        Bukkit.getServer().getConsoleSender().sendMessage(Utils.chat("&aArenas.yml file has been created!!"));
-    }
-
-    public FileConfiguration getArenas(){
-        return arenascfg;
-    }
-
-    public void saveArenas(){
-        try{
-            arenascfg.save(arenasfile);
-            Bukkit.getServer().getConsoleSender().sendMessage(Utils.chat("&aArenas.yml has been saved"));
-        }catch (IOException e){
-            Bukkit.getServer().getConsoleSender().sendMessage(Utils.chat("&cCould not save the arenas.yml file"));
-        }
-    }
-
-    public void reloadArenas(){
-        arenascfg = YamlConfiguration.loadConfiguration(arenasfile);
-        Bukkit.getServer().getConsoleSender().sendMessage(Utils.chat("&aArenas.yml has been reloaded"));
     }
 
 }
