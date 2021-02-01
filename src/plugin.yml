@@ -1,0 +1,10 @@
+name: LevelSystem
+version: 1.0.0-Alpha
+main: net.darkunscripted.LevelSytem.Main
+author: DarkUnScripted#1001
+
+commands:
+  pass:
+    description: shows battlepass
+  level:
+    description: shows level progress
